@@ -17,7 +17,7 @@ app.get('/', (request, response) => {
     response.send({
         status: "success",
         name: "Demo",
-        sms: ""
+        sms: "Servicio funcionando..."
     })
 })
 
