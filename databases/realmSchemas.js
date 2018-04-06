@@ -22,7 +22,7 @@ const CarSchema = {
   };
 
 const databaseOptions = {
-    path: 'RealmNodeJs.realm',
+    path: './Data/RealmNodeJs.realm',
     schema: [CarSchema, DemoSchema],
     schemaVersion: 0, //Optional
 }
