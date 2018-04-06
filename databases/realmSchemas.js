@@ -52,6 +52,16 @@ const insertDemo = newDemo => new Promise((resolve, reject) => {
     }).catch((error) => reject(error))
 })
 
+const selectData = newData => new Promise((resolve, reject) =>{
+    console.log('entro a este metodo')
+
+    
+    resolve()
+   
+    console.log('entro a este metodo')
+});
+
 module.exports = {
-    insertDemo
+    insertDemo,
+    selectData
 }

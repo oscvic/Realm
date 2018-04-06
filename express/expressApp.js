@@ -10,7 +10,8 @@ app.use(bodyParser.urlencoded({ extended: false}))
 //parse application
 app.use(bodyParser.json())
 //databases
-const { insertDemo } = require('../databases/realmSchemas')
+const { insertDemo, selectData } = require('../databases/realmSchemas')
+
 
 app.get('/', (request, response) => {
     response.setHeader('Content-Type', 'application/json');
@@ -45,6 +46,24 @@ app.post('/insert_new_demo', (request, response) => {
             message: `Insert User error: ${error}`
         })  
     })    
+})
+
+app.get('/connecttosybase',(request,response)=>{
+    response.setHeader('Content-Type', 'application/json');
+
+    selectData().then(selectedData => {
+        response.send({
+            status: "success",
+            message: `Select Data`,
+            data: selectedData
+        })
+    }).catch((error) => {
+        response.send({
+            status: "failed",
+            message: `Error: ${error}`
+        })  
+    })    
+    
 })
 
 module.exports = {
