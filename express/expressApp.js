@@ -52,10 +52,13 @@ app.get('/connecttosybase',(request,response)=>{
     response.setHeader('Content-Type', 'application/json');
 
     selectData().then(selectedData => {
+
+        console.log(selectedData)
+
         response.send({
             status: "success",
             message: `Select Data`,
-            data: selectedData
+            data: "The data is: " + selectedData
         })
     }).catch((error) => {
         response.send({

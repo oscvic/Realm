@@ -55,8 +55,26 @@ const insertDemo = newDemo => new Promise((resolve, reject) => {
 const selectData = newData => new Promise((resolve, reject) =>{
     console.log('entro a este metodo')
 
+    var mysql      = require('mysql');
+    var connection = mysql.createConnection({
+      host     : '127.0.0.1',
+      user     : 'user',
+      password : '12345',
+      database : 'lav',
+      port     : '3306'    
+    });
+     
+    connection.connect();
+     
+    connection.query('SELECT id, name from users', function (error, results, fields) {
+      if (error) throw error;
+      console.log('The name is: ', results[0].name);      
+      newdata = results[0].name
+    });
+     
+    connection.end();
     
-    resolve()
+    resolve(newData)
    
     console.log('entro a este metodo')
 });
