@@ -50,15 +50,14 @@ app.post('/insert_new_demo', (request, response) => {
 
 app.get('/connecttosybase',(request,response)=>{
     response.setHeader('Content-Type', 'application/json');
-
     selectData().then(selectedData => {
 
-        console.log(selectedData)
+        //console.log(selectedData)
 
         response.send({
             status: "success",
             message: `Select Data`,
-            data: "The data is: " + selectedData
+            data: selectedData
         })
     }).catch((error) => {
         response.send({

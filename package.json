@@ -9,10 +9,12 @@
   "author": "Oscar Vicente",
   "license": "ISC",
   "dependencies": {
+    "JSONStream": "^1.3.2",
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
-    "mysql": "^2.15.0",
+    "npm": "^5.8.0",
     "promise": "^8.0.1",
-    "realm": "^2.3.3"
+    "realm": "^2.3.3",
+    "sybase": "^1.2.1"
   }
 }
